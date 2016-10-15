@@ -71,6 +71,33 @@
             android:text="Cuci Setrika" />
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fasilitas Tambahan" />
+
+    <CheckBox
+        android:id="@+id/checkBoxGB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Gantungan Baju" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Cover Plastik" />
+
+    <CheckBox
+        android:id="@+id/checkBoxP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Pewangi" />
+
     <Button
         android:id="@+id/buttonOK"
         android:layout_width="wrap_content"

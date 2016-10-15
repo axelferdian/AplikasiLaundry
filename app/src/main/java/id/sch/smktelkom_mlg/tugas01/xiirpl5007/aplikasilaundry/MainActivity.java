@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvHasil;
     Button btOk;
     RadioButton rbCB, rbCK, rbCS;
+    CheckBox cbGB, cbCP, cbP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         rbCB = (RadioButton) findViewById(R.id.radioButtonCB);
         rbCK = (RadioButton) findViewById(R.id.radioButtonCK);
         rbCS = (RadioButton) findViewById(R.id.radioButtonCS);
+        cbGB = (CheckBox) findViewById(R.id.checkBoxGB);
+        cbCP = (CheckBox) findViewById(R.id.checkBoxCP);
+        cbP = (CheckBox) findViewById(R.id.checkBoxP);
 
         findViewById(R.id.buttonOK).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,13 +63,30 @@ public class MainActivity extends AppCompatActivity {
             harga = 0;
         }
 
-        int total = harga;
+        String fasilitas = "";
+        int startlen = fasilitas.length();
+        int harga2 = 0, harga3 = 0, harga4 = 0;
+        if (cbGB.isChecked()) {
+            harga2 = 2000;
+            fasilitas += cbGB.getText().toString() + ", ";
+        }
+        if (cbCP.isChecked()) {
+            harga3 = 4000;
+            fasilitas += cbCP.getText().toString() + ", ";
+        }
+        if (cbP.isChecked()) {
+            harga4 = 6000;
+            fasilitas += cbP.getText().toString() + " ";
+        }
+
+        int total = harga + harga2 + harga3 + harga4;
 
         if (isValid()) {
             tvHasil.setText("Nama Anda : " + nama +
                     "\nAlamat : " + alamat +
                     "\nNomor Telepon : " + nomor +
                     "\nJenis Laundry : " + hasil +
+                    "\nFasilitas Tambahan : " + fasilitas +
                     "\nTotal Bayar : " + String.valueOf(total));
         }
     }
